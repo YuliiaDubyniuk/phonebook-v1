@@ -11,20 +11,20 @@ export class Form extends Component {
   nameId = nanoid();
   numberId = nanoid();
 
-  handleChange = (evt) => {
+  handleChange = evt => {
     const { name, value } = evt.target;
     this.setState({ [name]: value });
   };
 
-  handleSubmit = (evt) => {
+  handleSubmit = evt => {
     const { name, number } = this.state;
     evt.preventDefault();
     this.props.onSubmit(name, number);
     this.reset();
-  }
+  };
 
-   reset(){
-      this.setState({
+  reset() {
+    this.setState({
       name: '',
       number: '',
     });
@@ -43,7 +43,7 @@ export class Form extends Component {
             name="name"
             value={name}
             onChange={this.handleChange}
-            pattern="^[a-zA-Zа-яА-Я]+(([' \\-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             required
           />
         </label>
@@ -56,7 +56,7 @@ export class Form extends Component {
             name="number"
             value={number}
             onChange={this.handleChange}
-            pattern="\\+?\\d{1,4}?[ .\\-\\s]?\\(?\\d{1,3}?\\)?[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,9}"
+            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
             required
           />
         </label>

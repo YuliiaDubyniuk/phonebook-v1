@@ -1,6 +1,6 @@
 import css from './SearchField.module.css';
 
-export const SearchField = (value, onChange) => (
+export const SearchField = ({ value, onChange }) => (
   <label className={css.searchLabel}>
     Find contacts by name
     <input
