@@ -1,4 +1,4 @@
-# PhoneBook App 📇
+# PhoneBook App
 
 A React-based phonebook manager allowing users to **add**, **view**, **edit**, and **delete** contacts in a clean, intuitive interface.
 
